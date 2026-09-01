@@ -7,6 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      MongoDB_URI: ${{ secrets.MONGODB_URI }}
+
     steps:
       - name: checkout source code
         uses: actions/checkout@v4
