@@ -32,6 +32,9 @@ jobs:
 
       - name: Start application
         run: docker compose up -d
+        
+      - name: Wait for application
+        run: sleep 15
 
       - name: Running Container
         run: docker compose ps
@@ -41,6 +44,9 @@ jobs:
 
       - name: Test application
         run: curl -f http://localhost:8080/swagger-ui/index.html#/user-controller/getUsers
+
+      - name: Wait for application
+        run: sleep 15
   
       - name: Stop application
         if: always()
