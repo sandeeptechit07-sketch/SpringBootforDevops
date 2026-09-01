@@ -27,3 +27,16 @@ jobs:
       - name: build with maven
         run: ./mvnw clean package
 
+      - name: Build Docker image
+        run: docker compose build
+
+      - name: Start application
+        run: docker compose up -d
+
+      - name: Test application
+        run: curl http://localhost:8080/swagger-ui/index.html#/user-controller/getUsers
+  
+      - name: Stop application
+        if: always()
+        run: docker compose down
+
