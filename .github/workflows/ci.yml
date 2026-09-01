@@ -33,8 +33,14 @@ jobs:
       - name: Start application
         run: docker compose up -d
 
+      - name: Running Container
+        run: docker compose ps
+
+      - name: Server logs
+        run: docker compose logs
+
       - name: Test application
-        run: curl http://localhost:8080/swagger-ui/index.html#/user-controller/getUsers
+        run: curl -f http://localhost:8080/swagger-ui/index.html#/user-controller/getUsers
   
       - name: Stop application
         if: always()
