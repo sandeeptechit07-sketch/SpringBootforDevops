@@ -4,5 +4,5 @@ services:
     container_name: springboot-container1
     ports:
       - "8080:8080"
-    env_file:
-      - .env
+    environment:
+      MongoDB_URI : "${MongoDB_URI}"
