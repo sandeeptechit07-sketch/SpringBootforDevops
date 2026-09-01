@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
-@RequestMapping("/employees")
+@RequestMapping("/employees/eddirs")
 public class UserController{
 
     private final UserRepository userRepository;
