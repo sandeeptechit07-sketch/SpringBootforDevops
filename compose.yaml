@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: springboot-devops
-    container_name: springboot-container1
+    container_name: springboot-container
     ports:
       - "8080:8080"
     environment:
