@@ -17,6 +17,9 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: maven
+          
+      - name: Give Maven wrapper execute permission
+        run: chmod +x ./mvnw
 
       - name: build with maven
         run: ./mvnw clean package
