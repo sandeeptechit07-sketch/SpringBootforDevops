@@ -9,3 +9,10 @@ services:
       - "8080:8080"
     environment:
       MongoDB_URI : "${MongoDB_URI}"
+
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: ap-south-1
+        awslogs-group: /springboot/SpringBootforDevops
+        awslogs-stream: springboot-container1
